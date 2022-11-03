@@ -25,6 +25,7 @@ def query_data_day(start_date_query):
                 FROM 
                     sensors.sqss_data
                 WHERE DATE(insert_date) = '{start_date_query}'
+                AND sensor_name = 'client_sqss_O'
                 ORDER BY insert_date DESC;
                 '''
     read_data = pd.read_sql(sql_code,con=engine)

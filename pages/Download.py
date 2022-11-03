@@ -24,6 +24,7 @@ def query_data(start_date_query,end_date_query):
                 FROM 
                     sensors.sqss_data
                 WHERE insert_date BETWEEN '{start_date_query}' AND '{end_date_query}'
+                AND sensor_name = 'client_sqss_O'
                 ORDER BY insert_date DESC;
                 '''
     df = pd.read_sql(sql_code,con=engine)
